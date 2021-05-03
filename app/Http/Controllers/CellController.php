@@ -72,7 +72,15 @@ class CellController extends Controller
      */
     public function update(Request $request, Cell $cell)
     {
-        //
+        $this->authorize('update',$cell);
+        $cell->update([
+           'planted_on' => $request->planted_on,
+           'germinated_on' => $request->germinated_on,
+           'flowered_on' => $request->flowered_on
+        ]);
+        $cell->save();
+
+        return redirect()->back();
     }
 
     /**

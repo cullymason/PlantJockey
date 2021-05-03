@@ -21,6 +21,8 @@ class Cell extends Model
         'tray_id',
         'plant_id',
         'planted_on',
+        'germinated_on',
+        'flowered_on'
     ];
 
     protected $appends = [
@@ -37,8 +39,9 @@ class Cell extends Model
         'row' => 'integer',
         'tray_id' => 'integer',
         'plant_id' => 'integer',
-        'planted_on' => 'date'
-
+        'planted_on' => 'date',
+        'germinated_on' => 'date',
+        'flowered_on' => 'date'
     ];
 
 
@@ -63,7 +66,10 @@ class Cell extends Model
     {
         return "{$this->column}{$this->row}";
     }
-
+    public function getGerminationTimeAttribute()
+    {
+        return $this->planted_on->diffInDays($this->germinated_on);
+    }
     public function plant()
     {
         return $this->belongsTo(\App\Models\Plant::class);

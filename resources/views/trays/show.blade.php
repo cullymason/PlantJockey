@@ -10,8 +10,11 @@
                         @foreach($tray->cells()->where('row',$i)->get() as $cell)
                             <td>
                                 <a href="{{route('cells.show',$cell)}}"  class="inline-flex flex-col h-24 w-24 @if($cell->plant) bg-gray-200 @else bg-gray-100 @endif">
-                                    <div class="flex">
-                                        <span class="font-bold uppercase text-xs bg-gray-200 text-gray-500 rounded-br p-1">{{$cell->address}}</span>
+                                    <div class="flex justify-between">
+                                        <span class="font-bold uppercase text-xs @if($cell->plant) bg-gray-300 text-gray-600 @else bg-gray-200 text-gray-500 @endif rounded-br p-1">{{$cell->address}}</span>
+                                        @if($cell->germinated_on)
+                                            <span class="text-green-500 m-1 w-4 h-4"><x-entypo-leaf /></span>
+                                        @endif
                                     </div>
                                     <div class="flex-auto p-1 inline-flex items-center justify-center">
                                         @if($cell->plant)

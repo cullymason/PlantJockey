@@ -32,11 +32,11 @@ Route::get('plants/{plant}', [PlantController::class,'show'])->middleware('auth'
 Route::get('plants/{plant}/edit', [PlantController::class,'edit'])->middleware('auth')->name('plants.edit');
 Route::put('plants/{plant}', [PlantController::class,'update'])->middleware('auth')->name('plants.update');
 
-Route::post('plant', [PlantController::class,'store'])->middleware('auth')->name('plants.store');
+Route::post('plants', [PlantController::class,'store'])->middleware('auth')->name('plants.store');
 
-Route::get('cell/{cell}',[CellController::class,'show'])->middleware('auth')->name('cells.show');
-
-Route::post('cell/{cell}/plant',[\App\Http\Controllers\CellPlantController::class,'create'])->middleware('auth')->name('cell.plant.create');
-Route::delete('cell/{cell}/plant',[\App\Http\Controllers\CellPlantController::class,'delete'])->middleware('auth')->name('cell.plant.delete');
+Route::get('cells/{cell}',[CellController::class,'show'])->middleware('auth')->name('cells.show');
+Route::put('cells/{cell}',[CellController::class,'update'])->middleware('auth')->name('cells.update');
+Route::post('cells/{cell}/plant',[\App\Http\Controllers\CellPlantController::class,'create'])->middleware('auth')->name('cell.plant.create');
+Route::delete('cells/{cell}/plant',[\App\Http\Controllers\CellPlantController::class,'delete'])->middleware('auth')->name('cell.plant.delete');
 
 require __DIR__.'/auth.php';

@@ -53,7 +53,7 @@ class CellPolicy
      */
     public function update(User $user, Cell $cell)
     {
-        //
+        return $user->id === $cell->tray->owner->id;
     }
 
     /**
