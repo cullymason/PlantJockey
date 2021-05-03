@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Exo:wght@900&family=Rock+Salt&display=swap);
 /*! tailwindcss v2.1.2 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -11437,6 +11437,10 @@ select{
 
 .font-heading{
   font-family: Exo, sans-serif;
+}
+
+.font-hand{
+  font-family: "Rock Salt", cursive;
 }
 
 .font-thin{
@@ -42784,6 +42788,10 @@ select{
     font-family: Exo, sans-serif;
   }
 
+  .sm\:font-hand{
+    font-family: "Rock Salt", cursive;
+  }
+
   .sm\:font-thin{
     font-weight: 100;
   }
@@ -73957,6 +73965,10 @@ select{
 
   .md\:font-heading{
     font-family: Exo, sans-serif;
+  }
+
+  .md\:font-hand{
+    font-family: "Rock Salt", cursive;
   }
 
   .md\:font-thin{
@@ -105134,6 +105146,10 @@ select{
     font-family: Exo, sans-serif;
   }
 
+  .lg\:font-hand{
+    font-family: "Rock Salt", cursive;
+  }
+
   .lg\:font-thin{
     font-weight: 100;
   }
@@ -136309,6 +136325,10 @@ select{
     font-family: Exo, sans-serif;
   }
 
+  .xl\:font-hand{
+    font-family: "Rock Salt", cursive;
+  }
+
   .xl\:font-thin{
     font-weight: 100;
   }
@@ -167482,6 +167502,10 @@ select{
 
   .\32xl\:font-heading{
     font-family: Exo, sans-serif;
+  }
+
+  .\32xl\:font-hand{
+    font-family: "Rock Salt", cursive;
   }
 
   .\32xl\:font-thin{
