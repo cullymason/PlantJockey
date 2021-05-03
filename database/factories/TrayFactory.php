@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Tray;
@@ -26,6 +27,7 @@ class TrayFactory extends Factory
             'name' => $this->faker->name,
             'rows' => $this->faker->randomNumber(2),
             'columns' => $this->faker->randomNumber(2),
+            'user_id' => User::factory()
         ];
     }
 }

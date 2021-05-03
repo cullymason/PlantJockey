@@ -14,7 +14,7 @@ class TrayController extends Controller
      */
     public function index()
     {
-        $trays = Tray::all();
+        $trays = auth()->user()->trays;
 
         return view('trays.index')->with(['trays'=>$trays]);
     }
@@ -28,11 +28,16 @@ class TrayController extends Controller
      */
     public function store(Request $request)
     {
-        Tray::create([
+        $this->authorize('create',Tray::class);
+        $tray =Tray::make([
             'name'=> $request->name,
             'rows' => $request->rows,
             'columns' => $request->columns
         ]);
+
+        $tray->owner()->associate(auth()->user());
+
+        $tray->save();
 
         return redirect()->route('trays.index');
     }
@@ -45,6 +50,7 @@ class TrayController extends Controller
      */
     public function show(Tray $tray)
     {
+        $this->authorize('view',$tray);
         return view('trays.show')->with(['tray'=>$tray]);
     }
 

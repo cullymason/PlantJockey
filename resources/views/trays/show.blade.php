@@ -1,4 +1,4 @@
-<x-html>
+<x-main-layout>
     <span class="text-gray-600 text-xs uppercase tracking-wide leading-tight">Tray</span>
     <h1 class="text-gray-900 mb-4 text-2xl leading-tight"> {{$tray->name}}</h1>
 
@@ -48,4 +48,4 @@
             </div>
         </div>
     </div>
-</x-html>
+</x-main-layout>

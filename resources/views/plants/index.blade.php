@@ -1,4 +1,4 @@
-<x-html>
+<x-main-layout>
     <h1 class="text-gray-900 mb-4 text-2xl">Plants</h1>
     <div class="flex">
         <ul class="flex-auto divide-y">
@@ -24,4 +24,4 @@
             <button class="bg-gray-600 px-2 py-1 rounded text-gray-100" type="submit">Add Plant</button>
         </form>
     </div>
-</x-html>
+</x-main-layout>

@@ -14,7 +14,7 @@ class PlantController extends Controller
      */
     public function index()
     {
-        $plants = Plant::all();
+        $plants = auth()->user()->plants;
 
         return view('plants.index')->with(['plants'=>$plants]);
     }
@@ -37,11 +37,14 @@ class PlantController extends Controller
      */
     public function store(Request $request)
     {
-        $plant = Plant::create([
+        $this->authorize('create',Plant::class);
+        $plant = Plant::make([
             'name'=>$request->name,
             'description' => $request->description
         ]);
+        $plant->owner()->associate(auth()->user());
 
+        $plant->save();
         return redirect()->route('plants.index');
     }
 
@@ -53,6 +56,7 @@ class PlantController extends Controller
      */
     public function show(Plant $plant)
     {
+        $this->authorize('view',$plant);
         return view('plants.show')->with(['plant'=>$plant]);
     }
 

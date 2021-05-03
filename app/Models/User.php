@@ -40,4 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function trays()
+    {
+        return $this->hasMany(Tray::class);
+    }
+
+    public function plants()
+    {
+        return $this->hasMany(Plant::class);
+    }
 }

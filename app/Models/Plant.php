@@ -38,4 +38,9 @@ class Plant extends Model
     {
         return $this->belongstoMany(Tray::class)->withPivot('color');
     }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
 }

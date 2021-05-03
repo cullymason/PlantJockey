@@ -1,4 +1,4 @@
-<x-html>
+<x-main-layout>
     <h1>Edit Plant</h1>
     <form method="POST" action="{{route('plants.update',$plant)}}">
         @method('put')
@@ -12,4 +12,4 @@
 
         <button type="submit">Update Plant</button>
     </form>
-</x-html>
+</x-main-layout>

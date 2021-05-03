@@ -1,4 +1,4 @@
-<x-html>
+<x-main-layout>
     <h1><a href="{{route('trays.show',$cell->tray)}}">{{$cell->tray->name}}</a>: {{$cell->address}}</h1>
 
     @if($cell->plant)
@@ -21,4 +21,4 @@
             <button type="submit">Attach Plant</button>
         </form>
     @endif
-</x-html>
+</x-main-layout>

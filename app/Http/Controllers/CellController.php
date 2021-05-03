@@ -47,7 +47,8 @@ class CellController extends Controller
      */
     public function show(Cell $cell)
     {
-        $plants = Plant::all();
+        $this->authorize('view',$cell);
+        $plants = auth()->user()->plants;
         return view('cells.show')->with(['cell'=>$cell,'plants'=>$plants]);
     }
 

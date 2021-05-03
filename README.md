@@ -1,4 +1,4 @@
-# SeedsGrid
+# PlantJockey
 
 ## About
 SeedsGrid is an online tool to keep track of how the growth of the seeds are progressing. 

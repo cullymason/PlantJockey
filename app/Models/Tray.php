@@ -43,7 +43,10 @@ class Tray extends Model
     {
         return $this->belongsToMany(Plant::class)->withPivot('color');
     }
-
+    public function owner()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
     public function setNameAttribute($value)
     {
         $name = $value;
