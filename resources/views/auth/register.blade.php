@@ -1,9 +1,12 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            <h1 class="flex items-center my-12">
+            <span>
+                <x-entypo-leaf class="w-16 text-green-600" />
+            </span>
+                <span class="font-heading font-black text-gray-700 transform -translate-x-2 text-4xl">PlantJockey</span>
+            </h1>
         </x-slot>
 
         <!-- Validation Errors -->
