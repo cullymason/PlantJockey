@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route('/', HomeController::class);
+Route::get('/', HomeController::class);
 
 Route::get('trays', [TrayController::class,'index'])->middleware('auth')->name('trays.index');
 
