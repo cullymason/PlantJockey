@@ -14,10 +14,6 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        if(auth()->check())
-        {
-            return redirect()->route('trays.index');
-        }
-        return view('welcome');
+        return auth()->check() ? redirect()->route('trays.index') : view('welcome');
     }
 }
