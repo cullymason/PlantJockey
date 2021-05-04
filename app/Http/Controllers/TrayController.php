@@ -81,7 +81,7 @@ class TrayController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Tray $tray): \Illuminate\Http\RedirectResponse
-    { 
+    {
         $tray->cells()->each(function($cell){
             optional($cell->plant())->dissociate();
            $cell->save();
