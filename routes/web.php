@@ -23,8 +23,8 @@ Route::get('/', HomeController::class);
 Route::get('trays', [TrayController::class,'index'])->middleware('auth')->name('trays.index');
 
 Route::get('trays/{tray}', [TrayController::class,'show'])->middleware('auth')->name('trays.show');
-
 Route::post('trays', [TrayController::class,'store'])->middleware('auth')->name('trays.store');
+Route::delete('trays/{tray}', [TrayController::class,'destroy'])->middleware('auth')->name('trays.destroy');
 
 Route::get('plants', [PlantController::class,'index'])->middleware('auth')->name('plants.index');
 

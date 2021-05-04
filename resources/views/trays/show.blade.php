@@ -35,6 +35,11 @@
                 <button class="py-2 border-2 rounded-lg mb-2 font-medium text-gray-700">Rename</button>
                 <button class="py-2 border-2 rounded-lg mb-2 font-medium text-gray-700">Modify</button>
                 <button class="py-2 border-2 rounded-lg mb-2 font-medium bg-gray-300 border-gray-400 text-gray-500">Delete</button>
+                <form class="w-full" method="POST" action="{{route('trays.destroy',['tray'=>$tray])}}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="py-2 border-2 rounded-lg mb-2 font-medium bg-gray-300 border-gray-400 text-gray-500" type="submit">DELETE</button>
+                </form>
             </div>
             <div>
                 <h2 class="text-gray-600 text-xs uppercase tracking-wide leading-tight">Plants in this tray</h2>
